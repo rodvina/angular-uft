@@ -63,10 +63,11 @@
 		 			<th>Event Code</th>
 		 			<th>Packet Type Code</th>
 		 			<th>Completed Flag</th>
+		 			<th>View Details</th>		 			
 		 		</tr>
 		 	</thead>
 		 	<tbody>
-		 		<tr ng-repeat="result in results" data-toggle="collapse" data-target="#accordion" class="clickable">
+		 		<tr ng-repeat="result in results">
 		 			<td>{{ result.requestDate | date: 'MM/dd/yyyy HH:mm:ss' }}</td>
 		 			<td>{{ result.company }}</td>
 		 			<td>{{ result.source }}</td>
@@ -76,7 +77,8 @@
 		 			<td>{{ result.referenceType }}</td>
 		 			<td>{{ result.event }}</td>
 		 			<td>{{ result.packetType }}</td>
-		 			<td>{{ result.completedFlag }}</td>		 			
+		 			<td>{{ result.completedFlag }}</td>
+		 			<td><input type="submit" value="View" ng-click="viewRequestDetail(result.policyNumber)"></input>		 					 			
 		 		</tr>		 	
 		 	</tbody>
 		</table>

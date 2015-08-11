@@ -4,10 +4,11 @@
  * Controller module of the application.
  */
 angular.module('controllerMod', [])
-	.controller('mainCtrl', ['$scope', 'doSearch', function($scope, doSearch) {
+	.controller('mainCtrl', ['$scope', '$log', 'doSearch', function($scope, $log, doSearch) {
 		
 		//search function
 		$scope.search = function() {
+			$log.info("searching for "+$scope.searchtext);
 			//perform search via serviceMod
 			$scope.results = doSearch($scope.searchtext);
 			$scope.showResults = true;
@@ -17,6 +18,11 @@ angular.module('controllerMod', [])
 		$scope.clear = function() {
 			$scope.searchtext = "";
 			$scope.showResults = false;
+		};
+		
+		//view request detail
+		$scope.viewRequestDetail = function(uuid) {
+			$log.info("getting request detail for "+uuid);
 		};
 	
 	}]) 
