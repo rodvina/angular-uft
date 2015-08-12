@@ -8,8 +8,10 @@ angular
   .module('angularUft', [
     'ngResource',
     'ngRoute',
-    'controllerMod',
-    'serviceMod'
+    'infinite-scroll',
+    'mainController',
+    'trackingService',
+    'mockdataService'
   ])
 //  .config(function ($routeProvider) {
 //    $routeProvider

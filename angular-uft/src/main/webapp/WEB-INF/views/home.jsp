@@ -49,7 +49,11 @@
     	<input type="submit" value="Clear" ng-click="clear()"></input>
     </div>
     <div id="resultsDiv" ng-show="showResults">
-		<p>[sibling div]This is the results for:  {{searchtext}} </p>
+
+		<div>
+			<input type="text" placeholder="Enter filter" ng-model="resultsFilter"></input>
+			{{results.length}} found
+		</div>
 		<table class="table table-hover">
 		 	<thead>
 		 		<tr>
@@ -66,8 +70,8 @@
 		 			<th>View Details</th>		 			
 		 		</tr>
 		 	</thead>
-		 	<tbody>
-		 		<tr ng-repeat="result in results">
+		 	<tbody infinite-scroll="loadMore()">
+		 		<tr ng-repeat="result in results track by $index | filter: resultsFilter">
 		 			<td>{{ result.requestDate | date: 'MM/dd/yyyy HH:mm:ss' }}</td>
 		 			<td>{{ result.company }}</td>
 		 			<td>{{ result.source }}</td>
@@ -78,11 +82,15 @@
 		 			<td>{{ result.event }}</td>
 		 			<td>{{ result.packetType }}</td>
 		 			<td>{{ result.completedFlag }}</td>
-		 			<td><input type="submit" value="View" ng-click="viewRequestDetail(result.policyNumber)"></input>		 					 			
-		 		</tr>		 	
+		 			<td><input type="submit" value="View" ng-click="viewRequestDetail(result.uuid)"></input>		 					 			
+		 		</tr>
+		 		<tr><td>Load More...</td><tr>		 	
 		 	</tbody>
 		</table>
-	</div>    
+	</div>   
+	<div id="detailsDiv" ng-show="showDetails">
+		{{details}}
+	</div> 
 
     
     <div ng-view=""></div>
@@ -101,10 +109,12 @@
     <script src="resources/js/vendor/angular-resource/angular-resource.js"></script>
     <script src="resources/js/vendor/angular-route/angular-route.js"></script>
     <script src="resources/js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="resources/js/vendor/ngInfiniteScroll/ng-infinite-scroll.min.js"></script>
 
     <script src="resources/js/app.js"></script>
-    <script src="resources/js/controller/maincontroller.js"></script>
-    <script src="resources/js/service/searchservice.js"></script>
+    <script src="resources/js/controller/main-controller.js"></script>
+    <script src="resources/js/service/tracking-service.js"></script>
+    <script src="resources/js/service/mockdata-service.js"></script>
 </body>
 </html>
 
