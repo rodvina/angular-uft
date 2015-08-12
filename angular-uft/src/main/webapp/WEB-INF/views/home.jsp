@@ -52,7 +52,7 @@
 
 		<div>
 			<input type="text" placeholder="Enter filter" ng-model="resultsFilter"></input>
-			{{results.length}} found
+			Found <span class="badge">{{totalCount}}</span> | Displaying <span class="badge">{{filtered.length}}</span>
 		</div>
 		<table class="table table-hover">
 		 	<thead>
@@ -71,7 +71,7 @@
 		 		</tr>
 		 	</thead>
 		 	<tbody infinite-scroll="loadMore()">
-		 		<tr ng-repeat="result in results track by $index | filter: resultsFilter">
+		 		<tr ng-repeat="result in results | filter:resultsFilter as filtered track by $index">
 		 			<td>{{ result.requestDate | date: 'MM/dd/yyyy HH:mm:ss' }}</td>
 		 			<td>{{ result.company }}</td>
 		 			<td>{{ result.source }}</td>

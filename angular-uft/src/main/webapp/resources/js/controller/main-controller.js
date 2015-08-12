@@ -6,15 +6,17 @@
 angular.module('mainController', [])
 	.controller('mainCtrl', ['$scope', '$log', 'tracking', function($scope, $log, tracking) {
 		//set max rows to display at a time before loading more
-		var maxresults = 5;
+		var maxresults = 15;
 		$scope.results = [];
 		$scope.allresults = [];
+		$scope.totalCount;
 		
 		//search function
 		$scope.search = function() {
 			$log.info("searching for "+$scope.searchtext);
 			//perform search via serviceMod
 			$scope.allresults = tracking.search($scope.searchtext);
+			$scope.totalCount = $scope.allresults.length;
 			//slice all results to predefined max
 			$scope.results = $scope.allresults.slice(0, maxresults);
 			$scope.showResults = true;
@@ -22,7 +24,7 @@ angular.module('mainController', [])
 		
 		//loads more results
 		$scope.loadMore = function() {
-			if ($scope.results.length != $scope.allresults.length) {
+			if ($scope.results.length != $scope.totalCount) {
 				var last = $scope.results.length - 1;
 				for(var i=1; i<=maxresults; i++) {
 					$scope.results.push($scope.allresults[last+i]);
