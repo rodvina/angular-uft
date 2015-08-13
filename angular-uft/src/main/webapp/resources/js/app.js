@@ -11,7 +11,7 @@ angular
     'infinite-scroll',
     'mainController',
     'trackingService',
-    'accordionDirective',
+    /*'accordionDirective',*/
     'mockdataService'
   ])
   .config(function ($routeProvider) {

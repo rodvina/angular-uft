@@ -36,11 +36,15 @@
 	        </tbody>
 	    </table>
 	</div>
+
     <script src="${pageContext.request.contextPath}/resources/js/vendor/jquery/jquery.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/vendor/angular/angular.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/vendor/angular-animate/angular-animate.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/vendor/angular-resource/angular-resource.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/vendor/angular-route/angular-route.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="${pageContext.request.contextPath}/resources/js/vendor/ngInfiniteScroll/ng-infinite-scroll.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/test.js"></script>
 

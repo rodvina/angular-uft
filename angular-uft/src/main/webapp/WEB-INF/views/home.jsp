@@ -63,7 +63,7 @@
     <script src="resources/js/controller/main-controller.js"></script>
     <script src="resources/js/service/tracking-service.js"></script>
     <script src="resources/js/service/mockdata-service.js"></script>
-    <script src="resources/js/directive/accordion-directive.js"></script>
+    <!-- <script src="resources/js/directive/accordion-directive.js"></script> -->
 </body>
 </html>
 

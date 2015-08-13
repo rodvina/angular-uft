@@ -4,6 +4,18 @@
  * Controller module of the application.
  */
 angular.module('mainController', [])
+	.directive('onFinishRender', function ($timeout) {
+	    return {
+	        restrict: 'A',
+	        link: function (scope, element, attr) {
+	            if (scope.$last === true) {
+	                $timeout(function () {
+	                    scope.$emit('ngRepeatFinished');
+	                });
+	            }
+	        }
+	    }
+	})
 	.controller('mainCtrl', ['$scope', '$log', 'tracking', function($scope, $log, tracking) {
 		//set max rows to display at a time before loading more
 		var maxresults = 15;

@@ -48,12 +48,12 @@
 		 	</tr>
 		 	<tr>
 		 		<td colspan="10" class="hiddenrow">
-		 		 	<div class="collapse" id="details{{$index}}>
+		 		 	<div id="details{{$index}}" class="collapse">
  						the details
  					</div>
 		 		</td>
 		 	</tr>
-		 		<tr><td>Load More...</td><tr>		 	
 		</tbody>
+		<tr><td>Load More...</td><tr>	
 	</table>
 </div>   
