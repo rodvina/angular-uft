@@ -40,12 +40,18 @@ angular.module('mainController', [])
 		};
 		
 		//view request detail
-		$scope.viewRequestDetail = function(uuid) {
-			$log.info("getting request detail for "+uuid);
-			$scope.details = tracking.viewDetails(uuid);
+		$scope.viewDetail = function(result) {
+			$log.info("getting request detail for "+result.uuid);
+			$scope.details = tracking.viewDetails(result.uuid);
 			$scope.showDetails = true;
 		};
 		
+		//accordion functionality for results table
+		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+	    	$('.collapse').on('show.bs.collapse', function () {
+	    	    $('.collapse.in').collapse('hide');
+	    	});
+		});
 
 	
 	}]) 
@@ -56,9 +62,14 @@ angular.module('mainController', [])
 	
 	}])
 	
-	.controller('requestDetailCtrl', ['$scope', function($scope) {
+	.controller('detailCtrl', ['$scope', function($scope) {
 		
-	
+		//view request detail
+		$scope.viewDetail = function(result) {
+			$log.info("getting request detail for "+result.uuid);
+			$scope.details = tracking.viewDetails(result.uuid);
+			$scope.showDetails = true;
+		};
 	
 	}]) 
 

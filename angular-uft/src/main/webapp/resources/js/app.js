@@ -11,20 +11,21 @@ angular
     'infinite-scroll',
     'mainController',
     'trackingService',
+    'accordionDirective',
     'mockdataService'
   ])
-//  .config(function ($routeProvider) {
-//    $routeProvider
-//      .when('/', {
-//        templateUrl: 'views/main.html',
-//        controller: 'MainCtrl'
-//      })
-//      .when('/about', {
-//        templateUrl: 'views/about.html',
-//        controller: 'AboutCtrl'
-//      })
-//      .otherwise({
-//        redirectTo: '/'
-//      });
-//  })
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/search.jsp',
+        controller: 'mainCtrl'
+      })
+      .when('/details', {
+        templateUrl: 'views/details.jsp',
+        controller: 'detailCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  })
   ;

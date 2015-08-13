@@ -1,1 +1,14 @@
 @CHARSET "ISO-8859-1";
+<style type="text/css">
+/*   .form-horizontal input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  } */
+  
+  .hiddenrow {
+  	padding: 0 !important;
+  }
+</style>
