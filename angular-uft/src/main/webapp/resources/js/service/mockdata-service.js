@@ -25,7 +25,7 @@ angular.module('mockdataService', [])
 						"packetType" : "Invoice",
 						"completedFlag" : "C",
 						"packetId" : "104"+i+"35",
-						"uuid" : "b"+i+"19eb-9194-4099-a6fc-8eee893e7157"})
+						"uuid" : "b"+i+"19eb-9194-4099-a6fc-8eee893e7"+i})
 				};
 				
 				return result;
@@ -33,8 +33,8 @@ angular.module('mockdataService', [])
 			
 			this.viewDetails = function(uuid) {
 				$log.info('mockdata service viewDetails...')
-				var data = [{
-					"TransactionRequestUUID": "ab14c1c0-af7b-11de-bd3a-1111b111b11a",
+				var data = {
+					"TransactionRequestUUID": uuid,
 					"TransactionRequestDate": "2010-08-09 11:53:00",
 					"OperatingCompany": "SLI",
 					"SourceSystem": "Claims",
@@ -437,7 +437,7 @@ angular.module('mockdataService', [])
 					"Steps": {
 						"Step": 10
 					}
-				}]
+				}
 //				$log.debug('returning data: '+JSON.stringify(data));
 				return data;
 			}

@@ -12,6 +12,7 @@ angular
     'mainController',
     'trackingService',
     /*'accordionDirective',*/
+    'requestDetailDirective',
     'mockdataService'
   ])
   .config(function ($routeProvider) {

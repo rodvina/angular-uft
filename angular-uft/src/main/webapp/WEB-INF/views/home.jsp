@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!doctype html>
-<html class="no-js">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="resources/css/main.css">
   </head>
@@ -18,7 +18,7 @@
     <!-- Add your site or application content here -->
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
     
 	    <div ng-view></div>
 
@@ -64,6 +64,7 @@
     <script src="resources/js/service/tracking-service.js"></script>
     <script src="resources/js/service/mockdata-service.js"></script>
     <!-- <script src="resources/js/directive/accordion-directive.js"></script> -->
+    <script src="resources/js/directive/requestdetail-directive.js"></script>
 </body>
 </html>
 

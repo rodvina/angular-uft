@@ -53,10 +53,15 @@ angular.module('mainController', [])
 		
 		//view request detail
 		$scope.viewDetail = function(result) {
-			$log.info("getting request detail for "+result.uuid);
-			$scope.details = tracking.viewDetails(result.uuid);
+			$log.info("mainCtrl:getting request detail for "+result.uuid);
+			$scope.requestdetail = tracking.viewDetails(result.uuid);
 			$scope.showDetails = true;
 		};
+		
+		//show packet detail
+		$scope.viewPacket = function(packet) {
+			$log.info("mainCtrl:getting packet detail for "+packet.PacketID);
+		}
 		
 		//accordion functionality for results table
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
@@ -76,12 +81,7 @@ angular.module('mainController', [])
 	
 	.controller('detailCtrl', ['$scope', function($scope) {
 		
-		//view request detail
-		$scope.viewDetail = function(result) {
-			$log.info("getting request detail for "+result.uuid);
-			$scope.details = tracking.viewDetails(result.uuid);
-			$scope.showDetails = true;
-		};
+
 	
 	}]) 
 

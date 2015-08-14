@@ -34,7 +34,7 @@
 	 		</tr>
 		 </thead>
 		<tbody ng-repeat="result in results | filter:resultsFilter as filtered track by $index" on-finish-render>
-	 		<tr data-toggle="collapse" data-target="#details{{$index}}">
+	 		<tr data-toggle="collapse" data-target="#details{{$index}}" ng-click="viewDetail(result)">
 	 			<td>{{ result.requestDate | date: 'MM/dd/yyyy HH:mm:ss' }}</td>
 	 			<td>{{ result.company }}</td>
 	 			<td>{{ result.source }}</td>
@@ -49,7 +49,7 @@
 		 	<tr>
 		 		<td colspan="10" class="hiddenrow">
 		 		 	<div id="details{{$index}}" class="collapse">
- 						the details
+ 						<request-detail trackingrequest="requestdetail"></request-detail>
  					</div>
 		 		</td>
 		 	</tr>
