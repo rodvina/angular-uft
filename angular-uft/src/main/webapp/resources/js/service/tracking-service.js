@@ -4,19 +4,13 @@ angular.module('trackingService', [])
 	.service('tracking', ['$http', '$log', 'mockdata',
         function ($http, $log, mockdata) {
 			$log.info('instantiating tracking service...')
-			
 			//search function
 			this.search = function(searchText) {
-//  			return $http.get('/codecademy/rest/shows')
-//				.success(function(data) {
-//					return data;
-//				})
-//            .error(function(err) {
-//                return err;
-//            });
 				$log.info('calling search function...')
+				//returns a promise
+				return $http.get('/uft/rest/v1/ft/requests');
 				
-				return mockdata.search(searchText);
+//				return mockdata.search(searchText);
 			};
 			
 			//view details function
