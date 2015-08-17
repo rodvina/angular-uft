@@ -1,0 +1,146 @@
+
+	<h5>Request Details</h5>
+<!-- request details -->
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Request UUID</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.TransactionRequestUUID}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Event Code</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.ClientApplicationEvent}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Operating Company</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.OperatingCompany}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Source System</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.SourceSystem}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Client Application</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.ClientApplication}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Policy Number</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.PolicyNumber}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Complete Flag</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.RequestCompleteFlag}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Policy Effective Date</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.PolicyEffectiveDate}}
+			</div>
+		</div>		
+	</div>
+</div>
+
+<!-- reference numbers -->
+<div class="row">
+	<div class="col-sm-12">
+		<h5>Reference Numbers</h5>
+	</div>
+	<div class="col-sm-12">
+		<!-- header row -->
+	<div class="row">
+		<div class="col-sm-4">
+			<label>Reference Number</label>
+		</div>
+		<div class="col-sm-4">
+			<label>Type</label>
+		</div>
+		<div class="col-sm-4">
+			<label>Description</label>
+		</div>												
+	</div>
+	<!-- data -->
+		<div class="row">
+			<div class="col-sm-4">
+				{{trackingrequest.ReferenceNumbers.ReferenceNumber.Number}}
+			</div>
+			<div class="col-sm-4">
+				{{trackingrequest.ReferenceNumbers.ReferenceNumber.Type}}
+			</div>
+			<div class="col-sm-4">
+				{{trackingrequest.ReferenceNumbers.ReferenceNumber.Description}}
+			</div>
+		</div>
+	</div>
+
+</div>	
+
+<!-- audit -->
+<div class="row">
+	<div class="col-sm-12">
+		<h5>Audit</h5>
+	</div>
+	<div class="col-sm-12">
+		<!-- header row -->
+	<div class="row">
+		<div class="col-sm-4">
+			<label>Step Code</label>
+		</div>
+		<div class="col-sm-4">
+			<label>Step Detail</label>
+		</div>
+		<div class="col-sm-4">
+			<label>Timestamp</label>
+		</div>												
+	</div>	
+</div>		
+<!-- data -->	
+<div class="col-sm-12">
+	<!-- iterate through packets -->
+	<div class="row" ng-repeat="packet in trackingrequest.Packets.Packet">
+
+		<div ng-repeat="step in packet.Steps.Step">
+			<div class="col-sm-4">
+				{{step.code}}
+			</div>
+			<div class="col-sm-4">
+				{{step.detail}}
+			</div>
+			<div class="col-sm-4">
+				{{step.timestamp | date: 'yyyy-MM-dd hh:mm:ss.sss' }}
+			</div>												
+		</div>	
+	</div>
+	 
+	</div>
+</div>
+

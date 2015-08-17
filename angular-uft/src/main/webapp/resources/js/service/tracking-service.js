@@ -4,6 +4,7 @@ angular.module('trackingService', [])
 	.service('tracking', ['$http', '$log', 'mockdata',
         function ($http, $log, mockdata) {
 			$log.info('instantiating tracking service...')
+			
 			//search function
 			this.search = function(searchText) {
 				$log.info('calling search function...')

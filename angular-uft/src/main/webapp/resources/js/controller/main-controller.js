@@ -72,11 +72,15 @@ angular.module('mainController', [])
 			$log.info("mainCtrl:getting request detail for "+result.uuid);
 			$scope.requestdetail = tracking.viewDetails(result.uuid);
 			$scope.showDetails = true;
+			$scope.detailToShow = "request";
 		};
 		
 		//show packet detail
 		$scope.viewPacket = function(packet) {
 			$log.info("mainCtrl:getting packet detail for "+packet.PacketID);
+			$scope.detailToShow = "packet";
+			$scope.packet = packet;
+			
 		}
 		
 		//accordion functionality for results table

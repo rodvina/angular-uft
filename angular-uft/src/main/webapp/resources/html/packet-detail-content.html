@@ -1,0 +1,37 @@
+
+	<h5>Packet Details - {{packet.PacketID}}</h5>
+	
+<!-- request details -->
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Request UUID</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.TransactionRequestUUID}}
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Event Code</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.ClientApplicationEvent}}
+			</div>
+		</div>
+
+
+
+			<div class="row">
+			<div class="col-sm-3">
+				<label>Policy Number</label>
+			</div>
+			<div class="col-sm-5">
+				{{trackingrequest.PolicyNumber}}
+			</div>
+		</div>
+		
+	</div>
+</div>
+

@@ -56,7 +56,7 @@ angular.module('mockdataService', [])
 							{
 								"PacketID": 30000010,
 								"PacketType": "Notice",
-								"RecipientType": "INSURED",
+								"RecipientType": "Insured",
 								"PacketFormat": "PDF",
 								"PacketDestination": "PrintVendor",
 								"PacketMailDate": "2010-09-02 00:00:00",
@@ -104,7 +104,14 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+									        {"code" : 20,
+									         "detail" : "Packet Created",
+									         "timestamp" : "1439825793900"
+									        },
+									        {"code" : 30,
+										     "detail" : "Send To Document Producer",
+										     "timestamp" : "1439825793900"
+										    }										    
 									]
 								}
 							}, {
@@ -158,7 +165,10 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+									        {"code" : 20,
+										         "detail" : "Packet Created",
+										         "timestamp" : "1439825793900"
+										        }	
 									]
 								}
 							}, {
@@ -212,7 +222,11 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+									        {"code" : 95,
+										         "detail" : "Packet Error",
+										         "timestamp" : "1439825793900"
+										        }
+
 									]
 								}
 							}, {
@@ -266,7 +280,14 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+										        {"code" : 20,
+											         "detail" : "Packet Created",
+											         "timestamp" : "1439825793900"
+											        },
+											        {"code" : 30,
+												     "detail" : "Send To Document Producer",
+												     "timestamp" : "1439825793900"
+												    }
 									]
 								}
 							}, {
@@ -320,7 +341,18 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+										        {"code" : 20,
+											         "detail" : "Packet Created",
+											         "timestamp" : "1439825793900"
+											        },
+											        {"code" : 30,
+												     "detail" : "Send To Document Producer",
+												     "timestamp" : "1439825793900"
+												    },
+											        {"code" : 50,
+											         "detail" : "Post Processor Uploaded",
+											         "timestamp" : "1439825793900"
+											        }
 									]
 								}
 							}, {
@@ -374,7 +406,22 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+										        {"code" : 20,
+											         "detail" : "Packet Created",
+											         "timestamp" : "1439825793900"
+											        },
+											        {"code" : 30,
+												     "detail" : "Send To Document Producer",
+												     "timestamp" : "1439825793900"
+												    },
+											        {"code" : 50,
+											         "detail" : "Post Processor Uploaded",
+											         "timestamp" : "1439825793900"
+											        },
+											        {"code" : 60,
+												     "detail" : "PrintVendor Ready",
+												     "timestamp" : "1439825793900"
+												    }
 									]
 								}
 							}, {
@@ -428,7 +475,11 @@ angular.module('mockdataService', [])
 								},
 								"Steps": {
 									"Step": [
-										20, 30, 50, 60
+										        {"code" : 20,
+											         "detail" : "Packet Created",
+											         "timestamp" : "1439825793900"
+											        }
+	
 									]
 								}
 							}
