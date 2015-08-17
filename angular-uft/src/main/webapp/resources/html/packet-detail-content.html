@@ -1,37 +1,110 @@
 
 	<h5>Packet Details - {{packet.PacketID}}</h5>
 	
-<!-- request details -->
+<!-- packet details -->
 	<div class="row">
-		<div class="col-sm-12">
-			<div class="row">
-			<div class="col-sm-3">
-				<label>Request UUID</label>
-			</div>
-			<div class="col-sm-5">
-				{{trackingrequest.TransactionRequestUUID}}
-			</div>
+		<div class="col-sm-3">
+			<label>Request UUID</label>
 		</div>
-			<div class="row">
-			<div class="col-sm-3">
-				<label>Event Code</label>
-			</div>
-			<div class="col-sm-5">
-				{{trackingrequest.ClientApplicationEvent}}
-			</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
 		</div>
-
-
-
-			<div class="row">
-			<div class="col-sm-3">
-				<label>Policy Number</label>
-			</div>
-			<div class="col-sm-5">
-				{{trackingrequest.PolicyNumber}}
-			</div>
+		<div class="col-sm-3">
+			<label>Policy Number</label>
 		</div>
-		
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
 	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Request UUID</label>
+		</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
+		</div>
+		<div class="col-sm-3">
+			<label>Policy Number</label>
+		</div>
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Packet ID</label>
+		</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
+		</div>
+		<div class="col-sm-3">
+			<label>Packet Type</label>
+		</div>
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Group ID</label>
+		</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
+		</div>
+		<div class="col-sm-3">
+			<label>Recipient</label>
+		</div>
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
+	</div>	
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Print Format</label>
+		</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
+		</div>
+		<div class="col-sm-3">
+			<label>Destination Description</label>
+		</div>
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<label>Document Producer Job No</label>
+		</div>
+		<div class="col-sm-4">
+			{{trackingrequest.TransactionRequestUUID}}
+		</div>
+		<div class="col-sm-3">
+			<label>Proposed Mail Date</label>
+		</div>
+		<div class="col-sm-2">
+			{{trackingrequest.PolicyNumber}}
+		</div>		
+	</div>		
+	<!--  tabs -->		
+	<div>
+	
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#forms" aria-controls="forms" role="tab" data-toggle="tab">Forms</a></li>
+	    <li role="presentation"><a href="#audit" aria-controls="audit" role="tab" data-toggle="tab">Audit</a></li>
+	    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+	    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+	  </ul>
+	
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="forms">...</div>
+	    <div role="tabpanel" class="tab-pane" id="audit">...</div>
+	    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+	    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+	  </div>
+	
+	</div>		
 </div>
 
