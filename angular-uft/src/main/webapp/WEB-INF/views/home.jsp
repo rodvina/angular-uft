@@ -56,7 +56,7 @@
     <script src="resources/js/vendor/angular-animate/angular-animate.js"></script>
     <script src="resources/js/vendor/angular-resource/angular-resource.js"></script>
     <script src="resources/js/vendor/angular-route/angular-route.js"></script>
-    <script src="resources/js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="resources/js/vendor/bootstrap/bootstrap.min.js"></script>
     <script src="resources/js/vendor/ngInfiniteScroll/ng-infinite-scroll.min.js"></script>
 
     <script src="resources/js/app.js"></script>
