@@ -13,7 +13,8 @@ angular
     'trackingService',
     'accordionDirective',
     'requestDetailDirective',
-    'mockdataService'
+    'mockdataService',
+    'interceptorMod'
   ])
   .config(function ($routeProvider) {
     $routeProvider

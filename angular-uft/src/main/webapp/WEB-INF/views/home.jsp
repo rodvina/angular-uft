@@ -52,7 +52,6 @@
 
     <script src="resources/js/vendor/jquery/jquery.js"></script>
     <script src="resources/js/vendor/angular/angular.js"></script>
-    <script src="resources/js/vendor/bootstrap/dist/js/bootstrap.js"></script>
     <script src="resources/js/vendor/angular-animate/angular-animate.js"></script>
     <script src="resources/js/vendor/angular-resource/angular-resource.js"></script>
     <script src="resources/js/vendor/angular-route/angular-route.js"></script>
@@ -65,6 +64,7 @@
     <script src="resources/js/service/mockdata-service.js"></script>
     <script src="resources/js/directive/accordion-directive.js"></script>
     <script src="resources/js/directive/requestdetail-directive.js"></script>
+    <script src="resources/js/interceptor/interceptor.js"></script>
 </body>
 </html>
 

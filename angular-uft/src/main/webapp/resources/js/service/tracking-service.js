@@ -8,10 +8,19 @@ angular.module('trackingService', [])
 			//search function
 			this.search = function(searchText) {
 				$log.info('calling search function...')
-				//returns a promise
-				return $http.get('/uft/rest/v1/ft/requests');
+				//opt1:returns a promise
+//				return $http.get('/uft/rest/v1/ft/requests');
 				
+				//opt2:use then to evaluate response
+				return $http.get('/uft/rest/v1/ft/requests').then(function(response) {
+					var time = response.config.respTimestamp - response.config.reqTimestamp;
+					console.log('The request took ' + time + ' ms.');
+					return response.data;
+				}, function(response){
+					console.log('error');
+				});
 //				return mockdata.search(searchText);
+
 			};
 			
 			//view details function

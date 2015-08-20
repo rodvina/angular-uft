@@ -16,7 +16,7 @@ angular.module('mainController', [])
 //	        }
 //	    }
 //	})
-	.controller('mainCtrl', ['$scope', '$log', 'tracking', '$http', function($scope, $log, tracking, $http) {
+	.controller('mainCtrl', ['$scope', '$log', 'tracking', function($scope, $log, tracking) {
 		//set max rows to display at a time before loading more
 		var maxresults = 15;
 		$scope.results = [];
@@ -27,26 +27,21 @@ angular.module('mainController', [])
 		$scope.search = function() {
 			$log.info("searching for "+$scope.searchtext);
 
-			//use $http service directly here instead of relying on separate service module
-//			$http.get('/uft/rest/v1/ft/requests')
-//				.success(function(data) {
-//					$scope.allresults = data;
-//				});
 			//perform search via serviceMod
 //			$scope.allresults = tracking.search($scope.searchtext);
 			
 			//perform search via serviceMod which will return a promise
 			tracking.search($scope.searchtext)
-				.success(function(data) {
+				.then(function(data) {
 					$scope.allresults = data;
 					$scope.totalCount = $scope.allresults.length;
 					//slice all results to predefined max
 					$scope.results = $scope.allresults.slice(0, maxresults);
 					$scope.showResults = true;
-				})
-				.error(function(err) {
-					//do something with error
 				});
+//				.error(function(err) {
+//					//do something with error
+//				});
 
 		};
 		
