@@ -6,6 +6,7 @@ angular.module('interceptorMod', [])
 			request: function(config) {
 				$log.debug("intercepted request...");
 				config.reqTimestamp = new Date().getTime();
+				config.headers['user'] = 'rodvina';
 				return config;
 			},
 			

@@ -45,12 +45,18 @@ angular.module('mainController', [])
 
 		};
 		
+		$scope.canLoad = true;
 		//loads more results
 		$scope.loadMore = function() {
 			if ($scope.results.length != $scope.totalCount) {
 				var last = $scope.results.length - 1;
 				for(var i=1; i<=maxresults; i++) {
 					$scope.results.push($scope.allresults[last+i]);
+					
+					if ($scope.results.length >= $scope.totalCount) {
+						$scope.canLoad = false;
+						return;
+					}
 				}
 			}
 		}
@@ -60,6 +66,9 @@ angular.module('mainController', [])
 			$scope.searchtext = "";
 			$scope.showResults = false;
 			$scope.showDetails = false;
+			$scope.canLoad = true;
+			$scope.results = [];
+			$scope.allresults = [];
 		};
 		
 		//view request detail
@@ -68,12 +77,14 @@ angular.module('mainController', [])
 			$scope.requestdetail = tracking.viewDetails(result.uuid);
 			$scope.showDetails = true;
 			$scope.detailToShow = "request";
+			$scope.isCollapsed = !$scope.isCollapsed; 
 		};
 		
 		//show packet detail
 		$scope.viewPacket = function(packet) {
 			$log.info("mainCtrl:getting packet detail for "+packet.PacketID);
 			$scope.detailToShow = "packet";
+			//if necessary, call service to get packet info
 			$scope.packet = packet;
 			
 		}

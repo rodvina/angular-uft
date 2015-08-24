@@ -1,22 +1,30 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: mainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('webappApp'));
+  beforeEach(module('mainController'));
 
-  var MainCtrl,
+  var mainCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    mainCtrl = $controller('mainCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
+  describe('when searching for packets', function() {
+	  beforeEach(function() {
+		  scope.search;
+	  });
+	  
+	  it('should be set to true', function() {
+		  expect(scope.showResults).to.equal(true);
+	  });
+  })
+  
+
 });

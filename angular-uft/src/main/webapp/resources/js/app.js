@@ -14,16 +14,17 @@ angular
     'accordionDirective',
     'requestDetailDirective',
     'mockdataService',
-    'interceptorMod'
+    'interceptorMod',
+    'mgcrea.ngStrap'		//angular-strap for tabs
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/search.jsp',
+        templateUrl: 'views/search.html',
         controller: 'mainCtrl'
       })
       .when('/details', {
-        templateUrl: 'views/details.jsp',
+        templateUrl: 'views/details.html',
         controller: 'detailCtrl'
       })
       .otherwise({
